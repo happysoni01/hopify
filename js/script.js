@@ -99,8 +99,7 @@ let array = Array.from(anchors)
   
   if(e.href.includes("/songs") && !e.href.includes(".htaccess")){
     // let folder = e.href.split("/").slice(-1)[0]
-    let folder = e.href.split("/").pop();
-    if (folder === "songs") {continue;} // Avoid duplicate 'songs/songs' issue
+      let folder = e.href.split("/").slice(-2)[0]
 
     // get the metadata of theh folder
     let a = await fetch(`/songs/${folder}/info.json`)
